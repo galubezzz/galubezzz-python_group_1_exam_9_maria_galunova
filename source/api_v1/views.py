@@ -7,7 +7,8 @@ from main import settings
 from webapp.models import RegistrationToken
 from rest_framework import viewsets, status
 # from django_filters import rest_framework as filters
-from api_v1.serializers import UserSerializer, UserRegisterSerializer, RegistrationTokenSerializer, AuthTokenSerializer
+from api_v1.serializers import UserSerializer, UserRegisterSerializer, RegistrationTokenSerializer, AuthTokenSerializer, \
+    ProductSerializer, CategorySerializer, ProductPhotoSerializer, OrderSerializer
 # AllowAny позволяет разрешить доступ в view всем пользователям,
 # IsAuthenticated - аутентифицированным, IsAdminUser - админам
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
@@ -17,6 +18,7 @@ from rest_framework.generics import CreateAPIView, GenericAPIView
 from rest_framework.authtoken.views import ObtainAuthToken, APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from webapp.models import RegistrationToken, Product, Category, ProductPhoto, Order
 
 
 # создаем представление для логина, наследуя его от стандартного класса ObtainAuthToken
@@ -67,8 +69,7 @@ class BaseViewSet(viewsets.ModelViewSet):
         # добавляем его объект IsAuthenticated() к разрешениям только
         # для "опасных" методов - добавление, редактирование, удаление данных
         if self.request.method in ["POST", "DELETE", "PUT", "PATCH"]:
-            permissions.append(IsAuthenticated()),
-            permissions.append(IsAdminUser())
+            permissions.append(IsAuthenticated())
         return permissions
 
 
@@ -161,3 +162,41 @@ class UserViewSet(viewsets.ModelViewSet):
         print(obj, request.user, '===')
         if request.method in ['PUT', 'PATCH', 'DELETE'] and obj != request.user:
             self.permission_denied(request, 'Can not edit other users data!')
+
+
+class ProductViewSet(BaseViewSet):
+    queryset = Product.objects.active().order_by('-date')
+
+    def get_serializer_class(self):
+        return ProductSerializer
+
+    def perform_destroy(self, instance):
+        instance.is_deleted = True
+        instance.save()
+
+
+class CategoryViewSet(BaseViewSet):
+    queryset = Category.objects.active().order_by("name")
+    serializer_class = CategorySerializer
+
+    def perform_destroy(self, instance):
+        instance.is_deleted = True
+        instance.save()
+
+
+class ProductPhotoViewSet(BaseViewSet):
+    queryset = ProductPhoto.objects.active()
+    serializer_class = ProductPhotoSerializer
+
+    def perform_destroy(self, instance):
+        instance.is_deleted = True
+        instance.save()
+
+
+class OrderViewSet(BaseViewSet):
+    queryset = Order.objects.active()
+    serializer_class = OrderSerializer
+
+    def perform_destroy(self, instance):
+        instance.is_deleted = True
+        instance.save()

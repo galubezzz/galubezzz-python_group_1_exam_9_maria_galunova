@@ -4,8 +4,9 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 from django.contrib.auth import authenticate
-from webapp.models import RegistrationToken
+from webapp.models import RegistrationToken, Product, Category, ProductPhoto, Order
 from rest_framework.authtoken.models import Token
+
 
 
 class UserRegisterSerializer(serializers.ModelSerializer):
@@ -129,3 +130,55 @@ class AuthTokenSerializer(serializers.Serializer):
             raise ValidationError("Invalid credentials")
 
 
+class InlineCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ('id', 'name')
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api_v1:category-detail')
+
+    class Meta:
+        model = Category
+        fields = ("url", "id", "name", "description")
+
+
+class ProductPhotoSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api_v1:photo-detail')
+
+    class Meta:
+        model = ProductPhoto
+        fields = ("url", "id", "product", "photo")
+
+
+class InlineProductPhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductPhoto
+        fields = ('id', 'product')
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api_v1:product-detail')
+    categories = InlineCategorySerializer(many=True, read_only=True)
+    photos = InlineProductPhotoSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Product
+        fields = ("url", "id", "name", "description", "date", "categories", "price", "photos")
+
+
+class InlineProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = ("id", "name")
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api_v1:order-detail')
+    products = InlineProductSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Order
+        fields = ("url", "id", "user", "products", "comment", "phone", "address", "date")

@@ -11,8 +11,15 @@ class RegistrationTokenAdmin(admin.ModelAdmin):
     readonly_fields = ['token']
 
 
+def list_admin_with_pk(*fields):
+    class PkListAdmin(admin.ModelAdmin):
+        list_display = ['pk'] + list(fields)
+    return PkListAdmin
+
+
+admin.site.register(Category, list_admin_with_pk('name'))
+admin.site.register(Product, list_admin_with_pk('name'))
+admin.site.register(ProductPhoto, list_admin_with_pk('product'))
+admin.site.register(Order, list_admin_with_pk('user', 'phone', 'address'))
+
 admin.site.register(RegistrationToken, RegistrationTokenAdmin)
-admin.site.register(Product)
-admin.site.register(ProductPhoto)
-admin.site.register(Category)
-admin.site.register(Order)
