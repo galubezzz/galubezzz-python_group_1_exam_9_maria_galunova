@@ -11,9 +11,12 @@ class ShoppingCart extends Component {
     render() {
         if (!this.props.productsInCart) return null;
         return <Fragment>
+            Вы выбрали:
             {this.props.productsInCart.map(product => {
                 return <div key={product.id}>
-                        <Product product={product}/>
+                    <h5 className="card-title">{product.name}</h5>
+                    <p className="card-subtitle mb-2 text-muted">Цена: {product.price}</p>
+                    <hr/>
                     </div>
             })}
         </Fragment>

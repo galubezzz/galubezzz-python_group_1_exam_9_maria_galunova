@@ -20,7 +20,7 @@ class Product extends Component {
                 <div className="card-body">
                     <NavLink className="nav-link card-title h5 text-dark p-0"
                              to={link}>{this.props.product.name}</NavLink>
-                    <h6 className="card-subtitle mb-2 text-muted">{this.props.product.price}</h6>
+                    <h6 className="card-subtitle mb-2 text-muted">Цена: {this.props.product.price}</h6>
                     <p className="card-text">{this.props.product.description}</p>
                 </div>
             </div>
