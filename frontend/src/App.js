@@ -10,8 +10,8 @@ import Register from "./containers/Register/Register";
 import RegisterActivate from "./containers/Register/RegisterActivate/RegisterActivate";
 import UserSettings from "./containers/UserSettings/UserSettings";
 import {tokenLogin} from "./store/actions/token-login";
-import MainPage from "./containers/MainPage/MainPage";
 import {connect} from "react-redux";
+import Products from "./containers/Products/Products";
 
 class App extends Component {
 
@@ -30,7 +30,7 @@ class App extends Component {
                             <Route path="/register" component={Register} exact/>
                             <Route path="/register/activate" component={RegisterActivate}/>
                             <AuthRoute path="/users/:id" component={UserSettings}/>
-                            <Route path="/" component={MainPage} exact/>
+                            <Route path="/" component={Products} exact/>
                         </Switch>
                     </Layout>
                 </BrowserRouter>
