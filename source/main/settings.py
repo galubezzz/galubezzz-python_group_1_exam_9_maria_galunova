@@ -36,7 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',    'webapp',
+    'django.contrib.staticfiles',
+    'webapp',
+    'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'api_v1',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# срок действия токена регистрации
+TOKEN_EXPIRATION_HOURS = 72
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/uploads/'

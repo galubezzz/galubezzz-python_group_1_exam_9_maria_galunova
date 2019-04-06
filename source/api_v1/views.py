@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 
-from exam9 import settings
+from main import settings
 from webapp.models import RegistrationToken
 from rest_framework import viewsets, status
 # from django_filters import rest_framework as filters
