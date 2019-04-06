@@ -166,6 +166,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class ProductViewSet(BaseViewSet):
     queryset = Product.objects.active().order_by('-date')
+    serializer_class = ProductSerializer
 
     def get_serializer_class(self):
         return ProductSerializer

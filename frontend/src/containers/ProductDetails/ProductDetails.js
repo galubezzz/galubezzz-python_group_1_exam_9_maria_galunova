@@ -33,15 +33,9 @@ class ProductDetails extends Component {
     }
 
     render() {
-        let categories = [];
-        if (!this.props.ProductDetails.product) return null;
+        if (!this.props.ProductDetails.product || !this.props.ProductDetails.product.category) return null;
+        const categories = this.props.ProductDetails.product.category.map(category => category.name + " ");
 
-        if (this.props.product && this.props.product.categories) {
-            categories = this.props.product.categories.map(category => {
-                return category.name
-            })
-        }
-        console.log(categories);
         return (
             <div className="card m-3" style={{"width": "40rem"}}>
                 <SimpleSlider photos={this.props.ProductDetails.product.photos}/>
@@ -51,6 +45,7 @@ class ProductDetails extends Component {
                     <h6 className="card-subtitle mb-2 text-muted">Дата: {this.props.ProductDetails.product.date}</h6>
                     <p className="card-text">Описание: {this.props.ProductDetails.product.description}</p>
                     <p className="card-text">Категория: {categories}</p>
+
                 </div>
             </div>
         )

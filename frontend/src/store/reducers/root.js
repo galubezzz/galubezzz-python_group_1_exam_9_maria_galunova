@@ -11,6 +11,7 @@ import productReducer from "./product-details";
 
 
 
+
 const rootReducer = combineReducers({
     login: loginReducer,
     register: registerReducer,
