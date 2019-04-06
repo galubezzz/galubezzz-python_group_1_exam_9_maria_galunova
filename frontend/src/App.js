@@ -12,6 +12,8 @@ import UserSettings from "./containers/UserSettings/UserSettings";
 import {tokenLogin} from "./store/actions/token-login";
 import {connect} from "react-redux";
 import Products from "./containers/Products/Products";
+import Product from "./components/Product/Product";
+import ProductDetails from "./containers/ProductDetails/ProductDetails";
 
 class App extends Component {
 
@@ -31,6 +33,7 @@ class App extends Component {
                             <Route path="/register/activate" component={RegisterActivate}/>
                             <AuthRoute path="/users/:id" component={UserSettings}/>
                             <Route path="/" component={Products} exact/>
+                            <Route path="/products/:id/" component={ProductDetails} exact/>
                         </Switch>
                     </Layout>
                 </BrowserRouter>
