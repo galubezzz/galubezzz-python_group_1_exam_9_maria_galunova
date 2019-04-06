@@ -3,6 +3,8 @@ import {loadProduct} from "../../store/actions/product-details";
 import connect from "react-redux/es/connect/connect";
 import axios from "axios";
 import {CATEGORIES_URL} from "../../api-urls";
+import SimpleSlider from "../../components/Slider/Slider";
+
 
 class ProductDetails extends Component {
 
@@ -12,6 +14,7 @@ class ProductDetails extends Component {
 
     componentDidMount() {
         this.props.loadProduct(this.props.match.params.id);
+
         axios.get(CATEGORIES_URL)
             .then(response => {
                 const category = response.data;
@@ -30,23 +33,23 @@ class ProductDetails extends Component {
     }
 
     render() {
-        const categories = [];
-        if (!this.props.product) return null;
+        let categories = [];
+        if (!this.props.ProductDetails.product) return null;
 
         if (this.props.product && this.props.product.categories) {
             categories = this.props.product.categories.map(category => {
                 return category.name
             })
         }
-        const product = {...this.props.product};
+        console.log(categories);
         return (
-            <div className="card m-3" style={{"width": "30rem"}}>
-                <img src={product.photo} className="card-img-top" alt="..."/>
+            <div className="card m-3" style={{"width": "40rem"}}>
+                <SimpleSlider photos={this.props.ProductDetails.product.photos}/>
                 <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">Цена: {product.price}</h6>
-                    <h6 className="card-subtitle mb-2 text-muted">Дата окончания показа: {product.date}</h6>
-                    <p className="card-text">Описание: {product.description}</p>
+                    <h5 className="card-title">{this.props.ProductDetails.product.name}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Цена: {this.props.ProductDetails.product.price}</h6>
+                    <h6 className="card-subtitle mb-2 text-muted">Дата: {this.props.ProductDetails.product.date}</h6>
+                    <p className="card-text">Описание: {this.props.ProductDetails.product.description}</p>
                     <p className="card-text">Категория: {categories}</p>
                 </div>
             </div>
@@ -56,7 +59,7 @@ class ProductDetails extends Component {
 
 const mapStateToProps = state => {
     return {
-        product: state.product,
+        ProductDetails: state.ProductDetails,
         auth: state.auth
     }
 };
