@@ -8,7 +8,6 @@ from webapp.models import RegistrationToken
 from rest_framework.authtoken.models import Token
 
 
-
 class UserRegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     password_confirm = serializers.CharField(write_only=True)
@@ -44,8 +43,6 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'password', 'password_confirm', 'email']
-
-
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -122,7 +119,6 @@ class RegistrationTokenSerializer(serializers.Serializer):
             raise ValidationError("Token does not exist or already used")
 
 
-
 class AuthTokenSerializer(serializers.Serializer):
     token = serializers.CharField(write_only=True)
 
@@ -131,3 +127,5 @@ class AuthTokenSerializer(serializers.Serializer):
             return Token.objects.get(key=token)
         except Token.DoesNotExist:
             raise ValidationError("Invalid credentials")
+
+

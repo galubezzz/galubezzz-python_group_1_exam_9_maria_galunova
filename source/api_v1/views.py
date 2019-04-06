@@ -7,7 +7,7 @@ from main import settings
 from webapp.models import RegistrationToken
 from rest_framework import viewsets, status
 # from django_filters import rest_framework as filters
-from api_v1.serializers import UserSerializer,UserRegisterSerializer, RegistrationTokenSerializer, AuthTokenSerializer
+from api_v1.serializers import UserSerializer, UserRegisterSerializer, RegistrationTokenSerializer, AuthTokenSerializer
 # AllowAny позволяет разрешить доступ в view всем пользователям,
 # IsAuthenticated - аутентифицированным, IsAdminUser - админам
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
@@ -17,8 +17,6 @@ from rest_framework.generics import CreateAPIView, GenericAPIView
 from rest_framework.authtoken.views import ObtainAuthToken, APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-
-
 
 
 # создаем представление для логина, наследуя его от стандартного класса ObtainAuthToken
@@ -73,18 +71,12 @@ class BaseViewSet(viewsets.ModelViewSet):
             permissions.append(IsAdminUser())
         return permissions
 
+
 # если мы хотим, чтобы аутентификация требовалась для всех действий с ресурсами нашего API, включая просмотр,
 # то вместо предыдущего варианта пишем:
 # class BaseViewSet(viewsets.ModelViewSet):
 #     permission_classes = (IsAuthenticated, )
 # здесь добавляется сам класс - IsAuthenticated, а не объект класса ( IsAuthenticated() )
-
-
-
-
-
-
-
 
 
 # класс для создания нового пользователя
@@ -148,7 +140,6 @@ class UserActivateView(GenericAPIView):
         user.save()
         token.delete()
         return user
-
 
 
 class UserViewSet(viewsets.ModelViewSet):
