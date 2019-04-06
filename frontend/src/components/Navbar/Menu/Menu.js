@@ -29,7 +29,7 @@ class Menu extends Component {
                  id="navbarNav">
                 <ul className="navbar-nav mr-auto">
                     <MenuItem to="/">Главная</MenuItem>
-                    {/*{is_admin ? <MenuItem to="/movies/add">Добавить фильм</MenuItem> : null}*/}
+                    <MenuItem to="/cart/">Корзина</MenuItem>
                 </ul>
 
                 <ul className="navbar-nav ml-auto">

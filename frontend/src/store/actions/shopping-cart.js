@@ -9,6 +9,7 @@ export const addProduct = (id) => {
         axios.get(PRODUCTS_URL + id)
             .then(response => {
                 console.log('==========', response.data);
+
                 return dispatch({type: PRODUCT_ADD, product: response.data});
             })
             .catch(error => console.log(error));

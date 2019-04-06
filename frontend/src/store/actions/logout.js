@@ -5,6 +5,8 @@ export const logout = () => {
     return dispatch => {
         // удаляется auth-token из localStorage при выходе
         localStorage.removeItem('auth-token');
+        localStorage.removeItem('cart');
+
         let a = localStorage.getItem('auth-token');
         console.log(a, 'auth-token remove');
         dispatch({type: LOGOUT});

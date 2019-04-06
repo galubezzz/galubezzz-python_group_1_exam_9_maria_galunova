@@ -14,6 +14,7 @@ import {connect} from "react-redux";
 import Products from "./containers/Products/Products";
 import Product from "./components/Product/Product";
 import ProductDetails from "./containers/ProductDetails/ProductDetails";
+import ShoppingCart from "./containers/ShoppingCart/ShoppingCart";
 
 class App extends Component {
 
@@ -34,6 +35,7 @@ class App extends Component {
                             <AuthRoute path="/users/:id" component={UserSettings}/>
                             <Route path="/" component={Products} exact/>
                             <Route path="/products/:id/" component={ProductDetails} exact/>
+                            <AuthRoute path='/cart/' component = {ShoppingCart}/>
                         </Switch>
                     </Layout>
                 </BrowserRouter>
