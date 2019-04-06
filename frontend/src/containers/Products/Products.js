@@ -6,6 +6,8 @@ import axios from "axios";
 import {CATEGORIES_URL} from "../../api-urls";
 import Select from 'react-select';
 
+
+
 class Products extends Component {
     state = {
         category: [],
@@ -46,6 +48,7 @@ class Products extends Component {
             return {value: category.id, label: category.name}
         });
         const {selectedOption} = this.state;
+
         return <Fragment>
             <Select
                 value={selectedOption}
@@ -53,17 +56,35 @@ class Products extends Component {
                 options={options}
             />
             <div className='row'>
-                {this.props.products.map(product => {
-                            return <div key={product.id}>
-                                <Product product={product}/>
-                            </div>
+                {this.props.products.filter(product => {
+                    const {selectedOption} = this.state;
+                    const fiterIsSelected = selectedOption && selectedOption.value
+                    let displayAll = !fiterIsSelected;
+                    return displayAll || product.categoryIDs.includes(this.state.selectedOption.value);
+                }).map(product => {
+                    return <div key={product.id}>
+                        <Product product={product}/>
+                    </div>
                 })}
             </div>
         </Fragment>
     }
 }
 
-const mapStateToProps = (state) => state.products;
+const mapStateToProps = (state) => {
+    let pr = state.products
+        && state.products.products || [];
+
+    return {
+        products: pr
+            && pr.map(p => {
+                return {
+                    ...p,
+                    categoryIDs: p.category.map(c => c.id)
+                }
+            })
+    };
+}
 const mapDispatchToProps = (dispatch) => ({
     loadProducts: () => dispatch(loadProducts())
 });
