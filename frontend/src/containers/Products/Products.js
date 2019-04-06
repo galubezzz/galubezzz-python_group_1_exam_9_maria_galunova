@@ -1,6 +1,7 @@
 import React, {Fragment, Component} from 'react'
 import {connect} from "react-redux";
 import {loadProducts} from "../../store/actions/products-list";
+import Product from "../../components/Product/Product";
 
 
 class Products extends Component {
@@ -15,7 +16,7 @@ class Products extends Component {
             <div className='row'>
                 {this.props.products.map(product => {
                     return <div key={product.id}>
-                            {product.name}
+                            <Product product={product}/>
                     </div>
                 })}
             </div>
