@@ -1,0 +1,737 @@
+[
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "name": "COLLECTIBLES",
+    "description": "Perfect items for your collection",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "name": "ACCESSORIES",
+    "description": "They will perfectly complement your outfit.",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 3,
+  "fields": {
+    "name": "TOYS",
+    "description": "Toys are not only for kids, especially these toys.",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Rick and Morty Plumbus Replica",
+    "description": "DO YOU NOT HAVE A PLUMBUS IN YOUR HOME\r\nThat's unpossible! Everyone has a Plumbus in their home! Well, if you're lacking one, keep it quiet. We here at ThinkGeek World Domination HQ can help fix you up before the Galactic Federation notices and fines you for a distinct lack of fleeb. \r\n\r\nWhat can you do with your plumbus? What CAN'T you do with your plumbus? We don't have to tell you what to do with it! Obviously. \r\n\r\nDon't be a Jerry. Get your plumbus today.",
+    "date": "2019-04-06",
+    "price": "120.00",
+    "is_deleted": false,
+    "category": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "Fallout Enamel Pins 5-Pack Set 4",
+    "description": "WHAT MAKES YOU S.P.E.C.I.A.L.\r\nOccasionally the loading screens of Fallout 4 would tease us with awesome-looking metal and enamel pins of the images of Vault Boy from the Perk Chart. We could rotate 'em, see the pin on the back, turn them V.A.T.S. green, but we couldn't pin them to our lapels - or to our bags, as is much more often the case for us than pinning things to lapels, or even having lapels. Wait, what is a lapel? Is that an armor mod? Bet it gives a boost to Charisma.\r\n\r\nYou don't have to drool during loading screens now (though you're still free to do that, we won't stop you, just maybe put a towel down or something), because enamel pins of the Vault-Tec perks chart are here! Featuring Vault Boy as you know and love him, demonstrating:\r\n\r\nLocal Leader\r\nAction Boy\r\nLady Killer\r\nLifegiver\r\nStrength",
+    "date": "2019-04-06",
+    "price": "234.00",
+    "is_deleted": false,
+    "category": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "Pok\u00e9mon Pikachu Coin Bank - ThinkGeek Exclusive",
+    "description": "IT'S A PIKA-BANK!\r\nNext time your Meowth is using his signature move, get your Pok\u00e9mon Pikachu Coin Bank ready so you can pick up the coins at the end of the battle! Just place a coin on the yellow space on the top of the box, press down, and Pikachu will reach out to grab your coin, talking and laughing all the while. Or he might not, little trickster. \r\n\r\nPikachu says up to 200 different phrases and sounds, which you can turn off with a convenient switch on the bottom if it all gets to be a bit too much. Sometimes when pets or little kids get a hold of itazura banks it can get a little crazy! And you can easily empty the bank using a little coin release door on the base. No matter what, Pikachu's happy to help keep the contents of this bank secure and safe from Team Rocket.",
+    "date": "2019-04-06",
+    "price": "234.00",
+    "is_deleted": false,
+    "category": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "Gudetama Fanny Pack",
+    "description": "THE LAZIEST TYPE OF BAG\r\nThere's a lot Gudetama says \"no\" to, especially when it involves\u2026 well, anything. Here. We'll show you what we mean:   \r\n\r\nPutting eggs into things? No. You'll put things into this egg instead. \r\nCracking an egg? Meh. This fanny pack is hard to crack. \r\nHolding an egg in your hand? Never. This egg holds things for you. \r\nEating eggs? Monster! Don't eat Gudetama. \r\n\r\nIt only makes sense to put Gudetama on a fanny pack. After all, the fanny pack is the laziest type of bag in existence. You don't even have to hold it because you wear it. So what if fanny packs are lazy? They still hold your things. Embrace your laziness and let fanny packs make the comeback they deserve.",
+    "date": "2019-04-06",
+    "price": "123.00",
+    "is_deleted": false,
+    "category": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.productphoto",
+  "pk": 1,
+  "fields": {
+    "product": 3,
+    "photo": "posters/junr_poke_pikachu_coin_bank_front.jpg",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.productphoto",
+  "pk": 2,
+  "fields": {
+    "product": 3,
+    "photo": "posters/junr_poke_pikachu_coin_bank_inuse.jpg",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.productphoto",
+  "pk": 3,
+  "fields": {
+    "product": 3,
+    "photo": "posters/junr_pokemon_pikachu_coin_bank.gif",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.productphoto",
+  "pk": 4,
+  "fields": {
+    "product": 1,
+    "photo": "posters/kuiv_rick_morty_plumbus_replica.jpg",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.productphoto",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "photo": "posters/knhp_fallout_enamel_pins_5_pack_set_4_1.jpg",
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.productphoto",
+  "pk": 6,
+  "fields": {
+    "product": 1,
+    "photo": "posters/kuiv_rick_morty_plumbus_replica_kitchen.jpg",
+    "is_deleted": false
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add registration token",
+    "content_type": [
+      "webapp",
+      "registrationtoken"
+    ],
+    "codename": "add_registrationtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change registration token",
+    "content_type": [
+      "webapp",
+      "registrationtoken"
+    ],
+    "codename": "change_registrationtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete registration token",
+    "content_type": [
+      "webapp",
+      "registrationtoken"
+    ],
+    "codename": "delete_registrationtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view registration token",
+    "content_type": [
+      "webapp",
+      "registrationtoken"
+    ],
+    "codename": "view_registrationtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add order",
+    "content_type": [
+      "webapp",
+      "order"
+    ],
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change order",
+    "content_type": [
+      "webapp",
+      "order"
+    ],
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": [
+      "webapp",
+      "order"
+    ],
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view order",
+    "content_type": [
+      "webapp",
+      "order"
+    ],
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add product photo",
+    "content_type": [
+      "webapp",
+      "productphoto"
+    ],
+    "codename": "add_productphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change product photo",
+    "content_type": [
+      "webapp",
+      "productphoto"
+    ],
+    "codename": "change_productphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete product photo",
+    "content_type": [
+      "webapp",
+      "productphoto"
+    ],
+    "codename": "delete_productphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view product photo",
+    "content_type": [
+      "webapp",
+      "productphoto"
+    ],
+    "codename": "view_productphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add product",
+    "content_type": [
+      "webapp",
+      "product"
+    ],
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change product",
+    "content_type": [
+      "webapp",
+      "product"
+    ],
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete product",
+    "content_type": [
+      "webapp",
+      "product"
+    ],
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view product",
+    "content_type": [
+      "webapp",
+      "product"
+    ],
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$xak24zZGGVdd$ANf56pcGjAgQR9qzQgVUwDbsFcV1dBaKCrvrs3uaXWA=",
+    "last_login": "2019-04-06T07:51:18.975Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "galubezzz@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-04-06T02:17:59.125Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
