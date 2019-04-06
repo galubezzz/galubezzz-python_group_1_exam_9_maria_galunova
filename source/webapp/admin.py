@@ -1,5 +1,5 @@
 from django.contrib import admin
-from webapp.models import RegistrationToken
+from webapp.models import RegistrationToken, Product, ProductPhoto, Order, Category
 
 
 # Register your models here.
@@ -12,3 +12,7 @@ class RegistrationTokenAdmin(admin.ModelAdmin):
 
 
 admin.site.register(RegistrationToken, RegistrationTokenAdmin)
+admin.site.register(Product)
+admin.site.register(ProductPhoto)
+admin.site.register(Category)
+admin.site.register(Order)
