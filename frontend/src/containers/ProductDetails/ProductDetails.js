@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {loadProduct} from "../../store/actions/product-details";
+import { addProduct} from "../../store/actions/shopping-cart";
 import connect from "react-redux/es/connect/connect";
 import axios from "axios";
 import {CATEGORIES_URL} from "../../api-urls";
@@ -45,7 +46,7 @@ class ProductDetails extends Component {
                     <h6 className="card-subtitle mb-2 text-muted">Дата: {this.props.ProductDetails.product.date}</h6>
                     <p className="card-text">Описание: {this.props.ProductDetails.product.description}</p>
                     <p className="card-text">Категория: {categories}</p>
-
+                    <button onClick={()=>{this.props.addToCart(this.props.ProductDetails.product.id)}}>Добавить в корзину</button>
                 </div>
             </div>
         )
@@ -62,6 +63,7 @@ const mapStateToProps = state => {
 const mapDispatchProps = dispatch => {
     return {
         loadProduct: (id) => dispatch(loadProduct(id)),
+        addToCart: (id) => dispatch(addProduct(id)),
 
     }
 };

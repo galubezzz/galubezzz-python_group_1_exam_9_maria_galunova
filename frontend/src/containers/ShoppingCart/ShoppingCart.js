@@ -1,10 +1,6 @@
 import React, {Fragment, Component} from 'react'
 import {connect} from "react-redux";
 
-import Product from "../../components/Product/Product";
-
-import Select from 'react-select';
-
 class ShoppingCart extends Component {
 
     componentDidMount() {
@@ -13,11 +9,12 @@ class ShoppingCart extends Component {
 
     render() {
         return <Fragment>
+            this.props.prproductsInCart.product.name
         </Fragment>
     }
 }
 
-const mapStateToProps = (state) => state.products;
+const mapStateToProps = (state) => state.productsInCart;
 const mapDispatchToProps = (dispatch) => ({
     loadProducts: () => dispatch(loadProducts())
 });
