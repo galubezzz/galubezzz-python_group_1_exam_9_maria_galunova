@@ -34,7 +34,9 @@ export const tokenLogin = () => {
             console.log(error);
             console.log(error.response);
             localStorage.removeItem('auth-token');
-            return dispatch(tokenLoginError(error.response.data));
+            if (error.response && error.response.data) {
+                return dispatch(tokenLoginError(error.response.data));
+            }
         });
     }
 };

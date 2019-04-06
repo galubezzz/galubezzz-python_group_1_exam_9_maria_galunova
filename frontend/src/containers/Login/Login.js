@@ -2,13 +2,12 @@ import React, {Component, Fragment} from 'react';
 import {login, LOGIN_SUCCESS} from '../../store/actions/login'
 import {connect} from "react-redux";
 
-
 class Login extends Component {
     state = {
         credentials: {
             username: "",
             password: ""
-        },
+        }
     };
 
     redirect = () => {
@@ -22,7 +21,6 @@ class Login extends Component {
 
     formSubmitted = (event) => {
         event.preventDefault();
-        // отправляем запрос с данными: логин и пароль
         const {username, password} = this.state.credentials;
         // один из вариантов редиректа - вернуть результат запроса
         // из action-creator'а login(). Результатом будет action, обёрнутый в Promise,
@@ -35,7 +33,6 @@ class Login extends Component {
         });
     };
 
-
     inputChanged = (event) => {
         this.setState({
             ...this.state,
@@ -46,10 +43,7 @@ class Login extends Component {
         })
     };
 
-    // принимает имя поля (или 'non_field_errors' -  если ошибка связана не с конкретным полем, а с общей логикой формы)
-    // и возвращает список элементов разметки для соответствующего набора сообщений, если они есть
     showErrors = (name) => {
-        console.log(this.props.errors, 'error_info');
         if(this.props.errors && this.props.errors[name]) {
             return this.props.errors[name].map((error, index) => <p className="text-danger" key={index}>{error}</p>);
         }
@@ -61,7 +55,6 @@ class Login extends Component {
         return <Fragment>
             <h2>Вход</h2>
             <form onSubmit={this.formSubmitted}>
-                {/*Используем метод showErrors для вывода ошибок в разметке*/}
                 {this.showErrors('non_field_errors')}
                 <div className="form-row">
                     <label className="font-weight-bold">Имя пользователя</label>

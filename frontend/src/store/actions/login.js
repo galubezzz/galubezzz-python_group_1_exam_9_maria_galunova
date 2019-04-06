@@ -1,4 +1,5 @@
 import axios, {LOGIN_URL} from "../../api-urls";
+import {tokenLoginError} from "./token-login";
 
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -30,7 +31,8 @@ export const login = (username, password) => {
             console.log(error);
             console.log(error.response);
             // либо отсюда вернётся действие из loginError()
-            return dispatch(loginError(error.response.data));
+             if (error.response && error.response.data) {
+                return dispatch(tokenLoginError(error.response.data));}
         });
     }
 };
